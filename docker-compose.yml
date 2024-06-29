@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+    db:
+        image: postgres:16.3
+        container_name: postgres-database
+        restart: always
+        environment:
+            POSTGRES_PASSWORD: postgres
+            POSTGRES_DB: nestjs
+            POSTGRES_USER: postgres
+        ports:
+            - '5432:5432'
+        volumes:
+            - ./data:/var/lib/postgresql/data
